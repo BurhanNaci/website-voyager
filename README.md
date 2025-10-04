@@ -1,4 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Voyager Manager Portal
+
+A Next.js-based manager portal for customer segmentation and campaign scheduling.
+
+## Features
+
+- **Customer Segments**: Interactive view of 5 customer segments with detailed profiles
+- **Interactive Charts**: Hourly demand chart for optimal campaign scheduling
+- **Campaign Management**: Schedule campaigns based on user activity patterns
+- **Real-time Data**: Live user activity data from 9 AM to 1 AM
 
 ## Getting Started
 
@@ -16,18 +25,26 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/` - Next.js app router pages
+- `src/components/` - Reusable React components
+- `src/lib/` - Utilities, types, and mock data
+- `public/` - Static assets including Enuygun branding
 
-## Learn More
+## Customer Segments
 
-To learn more about Next.js, take a look at the following resources:
+1. **At-Risk Customers** (26.4%) - Low value, high churn risk
+2. **High-Value Customers** (23.0%) - High value, low churn risk  
+3. **Standard Customers** (20.6%) - Medium value, stable
+4. **Price-Sensitive Customers** (18.3%) - Price-focused, active
+5. **Premium Customers** (11.7%) - High value, infrequent bookings
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Peak Hours
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **14:00** - Peak hour with 38,040 users
+- **21:00** - Evening peak with 34,240 users
+- **22:00** - Night activity with 34,150 users
 
 ## Deploy on Vercel
 
