@@ -2,7 +2,10 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0b1420;
+  --brand: #00b140; /* Enuygun green */
+  --brand-dark: #009537;
+  --muted: #6b7280;
 }
 
 @theme inline {
@@ -12,12 +15,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Force light theme in portal for readability */
 
 body {
   background: var(--background);
