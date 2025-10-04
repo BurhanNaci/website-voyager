@@ -7,6 +7,7 @@ const links = [
 	{ href: "/clusters", label: "Segments" },
 	{ href: "/packages", label: "Coupons & Packages" },
 	{ href: "/scheduling", label: "Scheduling" },
+	{ href: "/notifications", label: "Notifications" },
 ];
 
 export function Sidebar() {

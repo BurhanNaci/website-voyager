@@ -2,10 +2,10 @@ import axios from 'axios';
 import { CartAbandonmentRequest, CartAbandonmentResponse, Notification, User } from './types';
 
 // API Configuration
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+//const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: 'http://localhost:8080',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
@@ -37,14 +37,24 @@ api.interceptors.response.use(
 export const cartAbandonmentApi = {
   // Trigger cart abandonment notification
   async trigger(request: CartAbandonmentRequest): Promise<CartAbandonmentResponse> {
-    const { data } = await api.post<CartAbandonmentResponse>(
-      '/api/notifications/triggers/cart-abandonment',
-      request
-    );
-    return data;
+    try {
+      const { data } = await api.post<CartAbandonmentResponse>(
+        '/api/notifications/triggers/cart-abandonment',
+        {}, // ✅ Body boş gönder
+        {
+          params: {  // ✅ Query parametrelerini buraya ekle
+            user_id: 295,
+            hours: 10
+          }
+        }
+      );
+      return data;
+    } catch (error) {
+      console.error('Error triggering cart abandonment:', error);
+      throw error;
+    }
   },
 };
-
 // Mock user data
 export const mockUser: User = {
   id: 295,
